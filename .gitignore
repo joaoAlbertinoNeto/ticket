@@ -1,33 +1,116 @@
-HELP.md
+# =========================
+# Maven
+# =========================
 target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Relatórios de teste e site
+surefire-reports/
+failsafe-reports/
+.site/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# Cobertura
+jacoco.exec
+.jacoco/
+coverage/
+.coverage/
+
+# SonarQube
+.scannerwork/
+
+# =========================
+# IDEs
+# =========================
+# IntelliJ IDEA
+.idea/
 *.iml
-*.ipr
+*.iws
+out/
 
-### NetBeans ###
+# Eclipse / Spring Tool Suite
+.project
+.classpath
+.settings/
+.apt_generated/
+.factorypath
+.springBeans
+.sts4-cache/
+
+# NetBeans
 /nbproject/private/
+/build/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# VS Code
 .vscode/
+
+# =========================
+# Logs / dumps
+# =========================
+*.log
+logs/
+hs_err_pid*
+replay_pid*
+**/hs_err_pid*.log
+**/replay_pid*.hprof
+
+# =========================
+# Segredos / configs locais
+# =========================
+.env
+*.env
+*.local.properties
+*.local.yml
+*.local.yaml
+*.secrets.*
+secrets.*
+*.key
+*.pem
+*.jks
+*.p12
+
+# =========================
+# SO / arquivos temporários
+# =========================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editores
+*.swp
+*.swo
+*~
+*.orig
+
+# =========================
+# Monorepo com frontend (opcional)
+# =========================
+node_modules/
+
+# Docker (opcional)
+docker-compose.override.yml
+
+# =========================
+# Maven Wrapper (deixe versionado)
+# =========================
+!mvnw
+!mvnw.cmd
+!.mvn/wrapper/maven-wrapper.jar

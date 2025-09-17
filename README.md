@@ -74,42 +74,6 @@ cd ticket
 
 App em: http://localhost:8080
 
-⚙️ Configuração (R2DBC + H2)
-
-application.yml (exemplo):
-
-spring:
-  application:
-    name: ticket
-  r2dbc:
-    url: r2dbc:h2:mem:///ticketdb;DB_CLOSE_DELAY=-1;MODE=LEGACY
-    username: sa
-    password:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-  sql:
-    init:
-      mode: never  # usando R2DBC (sem JDBC). Ajuste para 'always' se for usar schema.sql com JDBC
-
-
-Nota H2 Console: O console do H2 é JDBC. Se quiser usar o /h2-console, adicione também uma URL JDBC para inspeção (sem afetar o R2DBC):
-
-spring:
-  datasource:
-    url: jdbc:h2:mem:ticketdb;DB_CLOSE_DELAY=-1;MODE=LEGACY
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-
-
-Console: http://localhost:8080/h2-console
-
-JDBC URL: jdbc:h2:mem:ticketdb
-
-User: sa (sem senha)
-
 🧪 Testes
 ./mvnw test
 
@@ -139,25 +103,3 @@ findById vazio → 404 Not Found
 POST → 201 Created (preferir Location no header com URL do recurso)
 
 Validação com Bean Validation (@Valid) nos DTOs (quando aplicável)
-
-🗺️ Roadmap (ideias)
-
- Paginação no GET /tickets
-
- Bean Validation nos DTOs (title obrigatório, tamanhos, etc.)
-
- Observabilidade: Actuator + métricas
-
- Perfil prod com Postgres (R2DBC) + Docker Compose
-
- Integração com MapStruct para mapeamento Entity ↔ DTO
-
-🧾 Licença
-
-MIT (ou a de sua preferência).
-
-🔗 Links
-
-Repositório: https://github.com/joaoAlbertinoNeto/ticket
-
-H2 Console (local): http://localhost:8080/h2-console
